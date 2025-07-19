@@ -9,7 +9,12 @@
     ~/.hammerspoon: dotfiles/macos/hammerspoon
 
 - shell:
-    - command: ansible-playbook applications/macos/playbook.yaml
+    - command: ansible-playbook applications/macos/playbook.yaml --tags=1password
+      stdin: true
+      stdout: true
+      description: Installing applications
+
+    - command: ansible-playbook applications/macos/playbook.yaml --vault-id=./vault/vault-from-op.sh --skip-tags=1password
       stdin: true
       stdout: true
       description: Installing applications
