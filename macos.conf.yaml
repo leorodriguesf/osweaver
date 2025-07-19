@@ -1,0 +1,9 @@
+- defaults:
+    link:
+      create: true
+      relink: true
+
+- link:
+    $XDG_CONFIG_HOME/aerospace: dotfiles/macos/aerospace
+    $XDG_CONFIG_HOME/hammerspoon: dotfiles/macos/hammerspoon
+    ~/.hammerspoon: dotfiles/macos/hammerspoon
