@@ -1,0 +1,9 @@
+- name: Setup macOS
+  hosts: localhost
+  tasks:
+    - block:
+        - import_tasks: tasks/1password.yaml
+          tags: 1password
+        - import_tasks: tasks/ssh.yaml
+          tags: ssh
+      when: ansible_os_family == 'Darwin'

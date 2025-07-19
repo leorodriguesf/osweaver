@@ -2,7 +2,7 @@
 
 set -e
 
-OSWEAVER_DIR=~/.osweaver
+export OSWEAVER_DIR=~/.osweaver
 OS_TYPE=$(uname -s)
 ASCII_ART='                                                                
   ____    ________  _  __  ____  _____   ___  __  ____  _______ 

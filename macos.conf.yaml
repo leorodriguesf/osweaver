@@ -7,3 +7,9 @@
     $XDG_CONFIG_HOME/aerospace: dotfiles/macos/aerospace
     $XDG_CONFIG_HOME/hammerspoon: dotfiles/macos/hammerspoon
     ~/.hammerspoon: dotfiles/macos/hammerspoon
+
+- shell:
+    - command: ansible-playbook applications/macos/playbook.yaml
+      stdin: true
+      stdout: true
+      description: Installing applications
