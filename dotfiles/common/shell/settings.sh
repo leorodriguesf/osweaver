@@ -5,6 +5,7 @@ export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_BIN_HOME="$HOME/.local/bin"
 
 export OSWEAVER_DIR="${OSWEAVER_DIR:-$HOME/.osweaver}"
+export OSWEAVER_BIN_DIR="$OSWEAVER_DIR/dotfiles/common/bin"
 export BACKUP_DIR="$HOME/backup"
 
 export EDITOR=vim

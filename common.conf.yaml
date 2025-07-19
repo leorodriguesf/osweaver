@@ -12,6 +12,7 @@
     - $XDG_CACHE_HOME
     - $XDG_BIN_HOME
     - $BACKUP_DIR
+    - $USER_BIN_DIR
 
 - create:
     - "~"
@@ -22,6 +23,7 @@
     - $XDG_CACHE_HOME
     - $XDG_BIN_HOME
     - $BACKUP_DIR
+    - $USER_BIN_DIR
 
 - shell:
     - [

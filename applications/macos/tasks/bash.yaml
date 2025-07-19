@@ -2,6 +2,8 @@
   blockinfile:
     path: ~/.bashrc_local_before
     block: |
+      [ -d "$OSWEAVER_DIR/dotfiles/macos/bin" ] && path_prepend "$OSWEAVER_DIR/dotfiles/macos/bin"
+
       [ -f /Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash ] &&
           . /Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash
 
