@@ -1,0 +1,17 @@
+- name: Install MesloLG (Nerd Font)
+  shell: |
+    cd /tmp
+    curl -LO https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/Meslo.zip
+    unzip Meslo.zip -d Meslo
+    cp Meslo/*.ttf ~/Library/Fonts
+    rm -rf Meslo.zip Meslo
+  args:
+    creates: ~/Library/Fonts/Meslo*
+
+- name: Install starship (custom prompt)
+  homebrew:
+    name: starship
+
+- name: Set MesloLG (Nerd Font) as default font
+  shell: |
+    osascript -e 'tell application "Terminal" to set font name of default settings to "MesloLGL Nerd Font Mono"'

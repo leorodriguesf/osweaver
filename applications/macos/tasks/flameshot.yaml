@@ -1,0 +1,12 @@
+- name: Install Rosetta (allow run Intel based code)
+  shell: softwareupdate --install-rosetta --agree-to-license
+
+- name: Install flameshot
+  homebrew_cask:
+    name: flameshot
+
+- name: Run flameshot on startup
+  shell: /Applications/flameshot.app/Contents/MacOS/flameshot config --autostart true
+
+- name: Open flameshot
+  shell: open /Applications/flameshot.app

@@ -1,0 +1,46 @@
+- name: Install tmux (terminal multiplexer)
+  homebrew:
+    name: tmux
+
+- name: Install fzf (fuzzy finder)
+  homebrew:
+    name: fzf
+
+- name: Install jq (tool for processing JSON)
+  homebrew:
+    name: jq
+
+- name: Install tldr (man pages in your terminal)
+  homebrew:
+    name: tlrc
+
+- name: Install shellcheck (linting tool for shell scripts)
+  homebrew:
+    name: shellcheck
+
+- name: Install pup (tool for processing HTML)
+  homebrew:
+    name: pup
+
+- name: Install lnav (log file navigator)
+  homebrew:
+    name: lnav
+
+- name: Install htop (top-like process viewer)
+  homebrew:
+    name: htop
+
+- name: Ensure /usr/local/bin exists
+  become: true
+  file:
+    dest: /usr/local/bin
+    mode: 0755
+    state: directory
+
+- name: Install tgpt (tool for interacting with OpenAI's GPT-3)
+  shell: |
+    curl -sSL https://raw.githubusercontent.com/aandrew-me/tgpt/main/install
+    bash -s /usr/local/bin
+  become: true
+  args:
+    creates: /usr/local/bin/tgpt

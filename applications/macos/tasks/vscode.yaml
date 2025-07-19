@@ -1,0 +1,42 @@
+- name: Install VSCode
+  homebrew_cask:
+    name: visual-studio-code
+
+- name: Ensure VSCode User settings directory exists
+  file:
+    path: ~/Library/Application Support/Code/User
+    state: directory
+    mode: 0755
+
+- name: Ensure settings exist
+  file:
+    dest: ~/Library/Application Support/Code/User/settings.json
+    state: touch
+
+- name: Link settings
+  file:
+    src: "{{lookup('env', 'XDG_CONFIG_HOME')}}/vscode/settings.json"
+    dest: ~/Library/Application Support/Code/User/settings.json
+    state: link
+    force: true
+
+- name: Ensure keybindings exist
+  file:
+    dest: ~/Library/Application Support/Code/User/keybindings.json
+    state: touch
+
+- name: Link keybindings
+  file:
+    src: "{{lookup('env', 'XDG_CONFIG_HOME')}}/vscode/keybindings.json"
+    dest: ~/Library/Application Support/Code/User/keybindings.json
+    state: link
+    force: true
+
+- name: Install jq (tool for processing JSON)
+  homebrew:
+    name: jq
+
+- name: Install extensions
+  shell:
+    cat {{lookup('env', 'XDG_CONFIG_HOME')}}/vscode/extensions.json | jq '.[] | .identifier.id' |
+    xargs -n1 code --install-extension
