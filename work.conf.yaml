@@ -1,0 +1,13 @@
+- defaults:
+    link:
+      create: true
+      relink: true
+
+- create:
+    - ~/work
+
+- shell:
+    - command: ansible-playbook applications/work/playbook.yaml --vault-id=./vault/vault-from-op.sh
+      stdin: true
+      stdout: true
+      description: Installing work environment

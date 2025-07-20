@@ -23,3 +23,11 @@ for conf in ${DEFAULT_CONFIG_PREFIX} "${@}"; do
     fi
 done
 
+# Ask if the user wants to install the work config
+read -p "Do you want to install the work config? (y/n) " -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+    "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "work${CONFIG_SUFFIX}"
+fi
+
+

@@ -5,3 +5,4 @@
   - Remove dock recent files
   - Change wallpaper
   - etc
+- Work config

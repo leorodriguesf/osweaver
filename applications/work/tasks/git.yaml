@@ -1,0 +1,6 @@
+- name: Add git config for work
+  copy:
+    src: "{{ lookup('env', 'OSWEAVER_DIR') }}/dotfiles/work/git/gitconfig"
+    dest: ~/.gitconfig_work
+    mode: 0600
+    force: true

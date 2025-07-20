@@ -1,0 +1,6 @@
+- name: Setup work environment
+  hosts: localhost
+  tasks:
+    - block:
+        - import_tasks: tasks/git.yaml
+          tags: git
