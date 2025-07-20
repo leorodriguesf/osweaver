@@ -24,10 +24,19 @@ for conf in ${DEFAULT_CONFIG_PREFIX} "${@}"; do
     fi
 done
 
-read -p "Do you want to install the work config? (y/n) " -n 1 -r
-echo
-if [[ $REPLY =~ ^[Yy]$ ]]; then
+while true; do
+  read -p "Do you want to also install the work config? (y/n) " -n 1 -r
+  echo  # Move to a new line after user input
+
+  if [[ $REPLY =~ ^[Yy]$ ]]; then
     "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${WORK_CONFIG_PREFIX}${CONFIG_SUFFIX}"
-fi
+    break
+  elif [[ $REPLY =~ ^[Nn]$ ]]; then
+    # User chose 'no' - just exit the loop without running the command
+    break
+  else
+    echo "Invalid input. Please enter 'y' or 'n'."
+  fi
+done
 
 
