@@ -45,6 +45,7 @@
 - link:
     $XDG_CONFIG_HOME/shell: dotfiles/common/shell
     $XDG_CONFIG_HOME/zsh: dotfiles/common/zsh
+    $XDG_CONFIG_HOME/alacritty: dotfiles/common/alacritty
     ~/.zshrc:
       path: dotfiles/common/zsh/zshrc
       force: true

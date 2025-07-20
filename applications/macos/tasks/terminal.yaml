@@ -15,3 +15,7 @@
 - name: Set MesloLG (Nerd Font) as default font
   shell: |
     osascript -e 'tell application "Terminal" to set font name of default settings to "MesloLGL Nerd Font Mono"'
+
+- name: Install Alacritty
+  homebrew_cask:
+    name: alacritty

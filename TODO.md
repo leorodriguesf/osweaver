@@ -1,0 +1,7 @@
+- Git work
+- bash work
+- zsh work
+- macOS tweak
+  - Remove dock recent files
+  - Change wallpaper
+  - etc
