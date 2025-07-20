@@ -5,6 +5,9 @@
 - name: Open AeroSpace
   shell: open /Applications/AeroSpace.app
 
+- pause:
+    prompt: Allow AeroSpace on System Settings
+
 - name: Hide dock
   shell: osascript -e 'tell application "System Events" to set the autohide of
     the dock preferences to true'

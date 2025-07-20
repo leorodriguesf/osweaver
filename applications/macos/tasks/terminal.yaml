@@ -19,3 +19,9 @@
 - name: Install Alacritty
   homebrew_cask:
     name: alacritty
+
+- name: Open Alacritty
+  shell: open /Applications/Alacritty.app
+
+- pause:
+    prompt: Allow Alacritty on System Settings
