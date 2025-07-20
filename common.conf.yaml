@@ -60,6 +60,7 @@
     $XDG_CONFIG_HOME/tmux: dotfiles/common/tmux
     $XDG_CONFIG_HOME/starship: dotfiles/common/starship
     $XDG_CONFIG_HOME/vscode: dotfiles/common/vscode
+    $XDG_CONFIG_HOME/nvim: dotfiles/common/nvim
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
