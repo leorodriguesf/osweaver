@@ -1,0 +1,6 @@
+- name: Add npmrc for work
+  copy:
+    src: "{{ lookup('env', 'OSWEAVER_DIR') }}/dotfiles/work/npm/npmrc"
+    dest: ~/.npmrc
+    mode: 0600
+    force: true

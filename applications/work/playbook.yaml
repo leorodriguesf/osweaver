@@ -4,3 +4,5 @@
     - block:
         - import_tasks: tasks/git.yaml
           tags: git
+        - import_tasks: tasks/npm.yaml
+          tags: npm
