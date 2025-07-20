@@ -1,3 +1,11 @@
+- name: Update gitconfig
+  blockinfile:
+    path: ~/.gitconfig_local
+    block: |
+      [includeIf "gitdir:~/work/"]
+      path = ~/.gitconfig_work
+    create: yes
+
 - name: Add git config for work
   copy:
     src: "{{ lookup('env', 'OSWEAVER_DIR') }}/dotfiles/work/git/gitconfig"
