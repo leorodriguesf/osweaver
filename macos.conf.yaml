@@ -3,10 +3,60 @@
       create: true
       relink: true
 
+- shell:
+    - [
+        cp ~/.shell_local_before ~/.shell_local_before.backup || echo "No shell_local_before found",
+        skipping...",
+        Backing up shell_local_before,
+      ]
+    - [
+        cp ~/.shell_local_after ~/.shell_local_after.backup || echo "No shell_local_after found",
+        skipping...",
+        Backing up shell_local_after,
+      ]
+    - [
+        cp ~/.zshrc_local_before ~/.zshrc_local_before.backup || echo "No zshrc_local_before found",
+        skipping...",
+        Backing up zshrc_local_before,
+      ]
+    - [
+        cp ~/.zshrc_local_after ~/.zshrc_local_after.backup || echo "No zshrc_local_after found",
+        skipping...",
+        Backing up zshrc_local_after,
+      ]
+    - [
+        cp ~/.bashrc_local_before ~/.bashrc_local_before.backup || echo "No bashrc_local_before found",
+        skipping...",
+        Backing up bashrc_local_before,
+      ]
+    - [
+        cp ~/.bashrc_local_after ~/.bashrc_local_after.backup || echo "No bashrc_local_after found",
+        skipping...",
+        Backing up bashrc_local_after,
+      ]
+
 - link:
     $XDG_CONFIG_HOME/aerospace: dotfiles/macos/aerospace
     $XDG_CONFIG_HOME/hammerspoon: dotfiles/macos/hammerspoon
     ~/.hammerspoon: dotfiles/macos/hammerspoon
+    ~/.shell_local_before:
+      force: true
+      path: dotfiles/macos/shell/shell_local_before
+    ~/.shell_local_after:
+      force: true
+      path: dotfiles/macos/shell/shell_local_after
+    ~/.zshrc_local_before:
+      force: true
+      path: dotfiles/macos/zsh/zshrc_local_before
+    ~/.zshrc_local_after:
+      force: true
+      path: dotfiles/macos/zsh/zshrc_local_after
+    ~/.bashrc_local_before:
+      force: true
+      path: dotfiles/macos/bash/bashrc_local_before
+    ~/.bashrc_local_after:
+      force: true
+      path: dotfiles/macos/bash/bashrc_local_after
 
 - shell:
     - command: ansible-playbook applications/macos/playbook.yaml --tags=1password

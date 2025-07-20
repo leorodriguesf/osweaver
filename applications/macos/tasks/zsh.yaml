@@ -9,19 +9,3 @@
 - name: Change default shell
   become: true
   shell: sudo chsh -s /bin/zsh {{user.stdout}}
-
-- name: Create and/or update zshrc_local_before
-  blockinfile:
-    path: ~/.zshrc_local_before
-    block: |
-      [ -d "$OSWEAVER_DIR/dotfiles/macos/bin" ] && path_prepend "$OSWEAVER_DIR/dotfiles/macos/bin"
-
-      source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-    create: yes
-
-- name: Create and/or update zshrc_local_after
-  blockinfile:
-    path: ~/.zshrc_local_after
-    block: |
-      source <(fzf --zsh) &>/dev/null
-    create: yes

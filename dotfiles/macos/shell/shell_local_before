@@ -1,0 +1,4 @@
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+path_append "/Applications/Docker.app/Contents/Resources/bin"
+path_append "/Applications/flameshot.app/Contents/MacOS"

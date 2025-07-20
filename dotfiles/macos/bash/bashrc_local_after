@@ -1,0 +1,3 @@
+$(brew --prefix)/opt/fzf/install --all >/dev/null
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash    # for bash

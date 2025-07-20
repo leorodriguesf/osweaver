@@ -1,0 +1,6 @@
+[ -d "$OSWEAVER_DIR/dotfiles/macos/bin" ] && path_prepend "$OSWEAVER_DIR/dotfiles/macos/bin"
+
+[ -f /Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash ] &&
+    . /Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash
+
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
