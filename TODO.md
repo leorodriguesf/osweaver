@@ -1,4 +1,3 @@
-- Git work
 - bash work
 - zsh work
 - macOS tweak

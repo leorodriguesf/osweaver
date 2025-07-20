@@ -1,0 +1,16 @@
+- name: Create and/or update shell_local_before
+  blockinfile:
+    path: ~/.shell_local_before
+    block: |
+      eval "$(/opt/homebrew/bin/brew shellenv)"
+
+      path_append "/Applications/Docker.app/Contents/Resources/bin"
+      path_append "/Applications/flameshot.app/Contents/MacOS"
+    create: yes
+
+- name: Create and/or update shell_local_after
+  blockinfile:
+    path: ~/.shell_local_after
+    block: |
+
+    create: yes
