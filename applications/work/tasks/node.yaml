@@ -2,6 +2,6 @@
   blockinfile:
     path: ~/.shell_local_before
     block: |
-      export NODE_OPTIONS=--max-old-space-size=8192
       export NODE_EXTRA_CA_CERTS="$(mkcert -CAROOT)/rootCA.pem"
+      export NODE_OPTIONS=--max_old_space_size=10240
     create: yes

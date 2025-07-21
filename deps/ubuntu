@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+
+set -e
+
+sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target &>/dev/null
+
+if [ "$(id -u)" -eq 0 ]; then
+    apt-get update && apt-get install -y sudo
+else
+    sudo apt-get update
+fi
+
+export DEBIAN_FRONTEND=noninteractive
+
+if ! command -v git &>/dev/null; then
+    sudo apt-get install git -y
+fi
+
+if ! command -v python3 &>/dev/null; then
+    sudo apt-get install python3 -y
+fi
+
+if ! command -v ansible &>/dev/null; then
+    sudo apt install software-properties-common -y
+    sudo add-apt-repository --yes --update ppa:ansible/ansible
+    sudo apt install ansible -y
+fi
+
+sudo systemctl unmask sleep.target suspend.target hibernate.target hybrid-sleep.target &>/dev/null

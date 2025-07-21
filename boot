@@ -23,7 +23,22 @@ Darwin)
     OS=macos
     ;;
 Linux)
-    OS=linux
+    if [ ! -f /etc/os-release ]; then
+        echo "Not able to detect Linux distro. Stopping"
+        exit 1
+    fi
+
+    . /etc/os-release
+
+    case "$ID" in
+    ubuntu)
+        OS=ubuntu
+        ;;
+    *)
+        echo "Linux distro $NAME not supported. Stopping"
+        exit 1
+        ;;
+    esac
     ;;
 *)
     echo "OS $OS_TYPE not yet supported. Stopping"

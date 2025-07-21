@@ -1,3 +1,10 @@
+- name: Backup npmrc
+  copy:
+    src: ~/.npmrc
+    dest: ~/.npmrc.backup
+    mode: 0600
+    ignore_errors: true
+
 - name: Add npmrc for work
   copy:
     src: "{{ lookup('env', 'OSWEAVER_DIR') }}/dotfiles/work/npm/npmrc"

@@ -10,4 +10,5 @@
     - command: ansible-playbook applications/work/playbook.yaml --vault-id=./vault/vault-from-op.sh
       stdin: true
       stdout: true
+      stderr: true
       description: Installing work environment
