@@ -1,2 +1,2 @@
-[ -f /usr/share/doc/fzf/examples/key-bindings.zsh && source /usr/share/doc/fzf/examples/key-bindings.zsh &>/dev/null ]
-[ -f /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh && source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]
+[ -f /usr/share/doc/fzf/examples/key-bindings.zsh ] && source /usr/share/doc/fzf/examples/key-bindings.zsh &>/dev/null
+[ -f /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]&& source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
