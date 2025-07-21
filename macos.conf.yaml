@@ -62,9 +62,11 @@
     - command: ansible-playbook applications/macos/playbook.yaml --tags=1password
       stdin: true
       stdout: true
+      stderr: true
       description: Installing 1Password. This is required for the rest of the setup
 
     - command: ansible-playbook applications/macos/playbook.yaml --ask-become-pass --vault-id=./vault/vault-from-op.sh --skip-tags=1password
       stdin: true
       stdout: true
+      stderr: true
       description: Installing applications
