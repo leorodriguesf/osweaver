@@ -34,3 +34,9 @@ vim.opt.undofile = true
 vim.opt.colorcolumn = "80"
 
 vim.opt.termguicolors = true
+
+vim.filetype.add({
+  extension = {
+    stk = "scheme"
+  }
+})
