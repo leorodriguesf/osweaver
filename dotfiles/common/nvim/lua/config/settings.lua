@@ -40,3 +40,6 @@ vim.filetype.add({
     stk = "scheme"
   }
 })
+
+-- Disable search highlight
+vim.opt.hlsearch = false
