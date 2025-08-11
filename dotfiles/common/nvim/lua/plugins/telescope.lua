@@ -1,4 +1,4 @@
-return {{
+return {
     "nvim-telescope/telescope.nvim",
     dependencies = {'nvim-lua/plenary.nvim'},
     config = function()
@@ -8,4 +8,5 @@ return {{
         vim.keymap.set("n", "<leader>sg", builtin.live_grep)
         vim.keymap.set("n", "<leader>sb", builtin.buffers)
     end
-}}
+}
+
