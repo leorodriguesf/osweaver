@@ -2,6 +2,9 @@
   hosts: localhost
   tasks:
     - block:
+        - import_tasks: tasks/customization.yaml
+          tags: customization
+
         - import_tasks: tasks/1password.yaml
           tags: 1password
 
